@@ -1,0 +1,500 @@
+    8  git diff
+    9  git commit
+   10  git log
+   11  clear
+   12  ls
+   13  ls
+   14  git config --global user.name "Arun Janarthanan"
+   15  git config --global user.email arunjv@gmail.com
+   16  git config --global user.email "arunjv@gmail.com"
+   17  clear
+   18  git init
+   19  git add .
+   20  git add status
+   21  git status
+   22  git commit
+   23  git log
+   24  git status
+   25  ls
+   26  vi test
+   27  cat test 
+   28  ls
+   29  vi test2
+   30  git status
+   31  git add .
+   32  git status
+   33  git commit
+   34  git log
+   35  ls
+   36  vi test
+   37  vi test2 
+   38  ls
+   39  git add .
+   40  git diff --cashed
+   41  git diff --cached
+   42  git diff
+   43  git diff --cached
+   44  git status
+   45  git commit
+   46  git commit -a
+   47  git commit -m "added 4th and 5th lines"
+   48  git log
+   49  git log -p
+   50  git log --stat --summary
+   51  git status --short
+   52  git status
+   53  ls
+   54  git branch experimental
+   55  git branch
+   56  git switch experimental
+   57  ls
+   58  vi test
+   59  git commit -a -m "added 6 line."
+   60  git switch master 
+   61  vi test
+   62  cat test
+   63  vi test
+   64  git commit -a -m "another new 6th line"
+   65  git merge experimental
+   66  git diff
+   67  vi test
+   68  cat test
+   69  git merge experimental
+   70  git commit -m "finally done"
+   71  cat test
+   72  git switch experimental
+   73  git merge experimental
+   74  git diff --cached
+   75  git diff
+   76  git commit -a
+   77  gitk
+   78  INFO@INFOPC MINGW64 /e/TEST (master)
+   79  $ git init
+   80  Reinitialized existing Git repository in E:/TEST/.git/
+   81  INFO@INFOPC MINGW64 /e/TEST (master)
+   82  $ git add .
+   83  INFO@INFOPC MINGW64 /e/TEST (master)
+   84  $ git add status
+   85  fatal: pathspec 'status' did not match any files
+   86  INFO@INFOPC MINGW64 /e/TEST (master)
+   87  $ git status
+   88  On branch master
+   89  Changes to be committed:
+   90    (use "git restore --staged <file>..." to unstage)
+   91          deleted:    sample.txt
+   92          deleted:    sample.txt.bak
+   93  INFO@INFOPC MINGW64 /e/TEST (master)
+   94  $ git commit
+   95  [master 7441492] go to hell
+   96   2 files changed, 6 deletions(-)
+   97   delete mode 100644 sample.txt
+   98   delete mode 100644 sample.txt.bak
+   99  INFO@INFOPC MINGW64 /e/TEST (master)
+  100  $ git log
+  101  commit 74414920cb28e7983575803201998bf111cd5d44 (HEAD -> master)
+  102  Author: Arun Janarthanan <arunjv@gmail.com>
+  103  Date:   Tue Aug 15 19:23:06 2023 +0530
+  104      go to hell
+  105  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+  106  Author: Arun Janarthanan <arunjv@gmail.com>
+  107  Date:   Tue Aug 15 18:36:07 2023 +0530
+  108      commited in sun
+  109  commit 36773e097ed811aea182cd85d9ec2d0182253024
+  110  Author: Arun Janarthanan <arunjv@gmail.com>
+  111  Date:   Tue Aug 15 18:33:17 2023 +0530
+  112  INFO@INFOPC MINGW64 /e/TEST (master)
+  113  $ git status
+  114  On branch master
+  115  nothing to commit, working tree clean
+  116  INFO@INFOPC MINGW64 /e/TEST (master)
+  117  $ ls
+  118  INFO@INFOPC MINGW64 /e/TEST (master)
+  119  $ vi test
+  120  INFO@INFOPC MINGW64 /e/TEST (master)
+  121  $ cat test
+  122  this is a new file.
+  123  it has 2 lines.
+  124  Adding 3rd line
+  125  INFO@INFOPC MINGW64 /e/TEST (master)
+  126  $ ls
+  127  test
+  128  INFO@INFOPC MINGW64 /e/TEST (master)
+  129  $ vi test2
+  130  INFO@INFOPC MINGW64 /e/TEST (master)
+  131  $ git status
+  132  On branch master
+  133  Untracked files:
+  134    (use "git add <file>..." to include in what will be committed)
+  135          test
+  136          test2
+  137  nothing added to commit but untracked files present (use "git add" to track)
+  138  INFO@INFOPC MINGW64 /e/TEST (master)
+  139  $ git add .
+  140  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+  141  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+  142  INFO@INFOPC MINGW64 /e/TEST (master)
+  143  $ git status
+  144  On branch master
+  145  Changes to be committed:
+  146    (use "git restore --staged <file>..." to unstage)
+  147          new file:   test
+  148          new file:   test2
+  149  INFO@INFOPC MINGW64 /e/TEST (master)
+  150  $ git commit
+  151  [master 1dd20f4] first commit
+  152   2 files changed, 7 insertions(+)
+  153   create mode 100644 test
+  154   create mode 100644 test2
+  155  INFO@INFOPC MINGW64 /e/TEST (master)
+  156  $ git log
+  157  commit 1dd20f4e82362215b16f87dd0f0c528ea692134b (HEAD -> master)
+  158  Author: Arun Janarthanan <arunjv@gmail.com>
+  159  Date:   Tue Aug 15 19:26:16 2023 +0530
+  160      first commit
+  161  commit 74414920cb28e7983575803201998bf111cd5d44
+  162  Author: Arun Janarthanan <arunjv@gmail.com>
+  163  Date:   Tue Aug 15 19:23:06 2023 +0530
+  164      go to hell
+  165  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+  166  Author: Arun Janarthanan <arunjv@gmail.com>
+  167  Date:   Tue Aug 15 18:36:07 2023 +0530
+  168  INFO@INFOPC MINGW64 /e/TEST (master)
+  169  $ ls
+  170  test  test2
+  171  INFO@INFOPC MINGW64 /e/TEST (master)
+  172  $ vi test
+  173  INFO@INFOPC MINGW64 /e/TEST (master)
+  174  $ vi test2
+  175  INFO@INFOPC MINGW64 /e/TEST (master)
+  176  $ ls
+  177  test  test2
+  178  INFO@INFOPC MINGW64 /e/TEST (master)
+  179  $ git add .
+  180  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+  181  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+  182  INFO@INFOPC MINGW64 /e/TEST (master)
+  183  $ git diff --cashed
+  184  error: invalid option: --cashed
+  185  INFO@INFOPC MINGW64 /e/TEST (master)
+  186  $ git diff --cached
+  187  diff --git a/test b/test
+  188  index dcc1fa2..d349b03 100644
+  189  --- a/test
+  190  +++ b/test
+  191  @@ -1,3 +1,5 @@
+  192   this is a new file.
+  193   it has 2 lines.
+  194  -Adding 3rd line
+  195  +Adding 3rd line.
+  196  +Added 4th line.
+  197  +Added 5th line.
+  198  diff --git a/test2 b/test2
+  199  index 9aab7b4..5199747 100644
+  200  --- a/test2
+  201  +++ b/test2
+  202  @@ -2,3 +2,5 @@ this is the second new file.
+  203  INFO@INFOPC MINGW64 /e/TEST (master)
+  204  $ git diff
+  205  INFO@INFOPC MINGW64 /e/TEST (master)
+  206  $ git diff --cached
+  207  diff --git a/test b/test
+  208  index dcc1fa2..d349b03 100644
+  209  --- a/test
+  210  +++ b/test
+  211  @@ -1,3 +1,5 @@
+  212   this is a new file.
+  213   it has 2 lines.
+  214  -Adding 3rd line
+  215  +Adding 3rd line.
+  216  +Added 4th line.
+  217  +Added 5th line.
+  218  diff --git a/test2 b/test2
+  219  index 9aab7b4..5199747 100644
+  220  --- a/test2
+  221  +++ b/test2
+  222  INFO@INFOPC MINGW64 /e/TEST (master)
+  223  $ git init
+  224  Reinitialized existing Git repository in E:/TEST/.git/
+  225  INFO@INFOPC MINGW64 /e/TEST (master)
+  226  $ git add .
+  227  INFO@INFOPC MINGW64 /e/TEST (master)
+  228  $ git add status
+  229  fatal: pathspec 'status' did not match any files
+  230  INFO@INFOPC MINGW64 /e/TEST (master)
+  231  $ git status
+  232  On branch master
+  233  Changes to be committed:
+  234    (use "git restore --staged <file>..." to unstage)
+  235          deleted:    sample.txt
+  236          deleted:    sample.txt.bak
+  237  INFO@INFOPC MINGW64 /e/TEST (master)
+  238  $ git commit
+  239  [master 7441492] go to hell
+  240   2 files changed, 6 deletions(-)
+  241   delete mode 100644 sample.txt
+  242   delete mode 100644 sample.txt.bak
+  243  INFO@INFOPC MINGW64 /e/TEST (master)
+  244  $ git log
+  245  commit 74414920cb28e7983575803201998bf111cd5d44 (HEAD -> master)
+  246  Author: Arun Janarthanan <arunjv@gmail.com>
+  247  Date:   Tue Aug 15 19:23:06 2023 +0530
+  248      go to hell
+  249  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+  250  Author: Arun Janarthanan <arunjv@gmail.com>
+  251  Date:   Tue Aug 15 18:36:07 2023 +0530
+  252      commited in sun
+  253  commit 36773e097ed811aea182cd85d9ec2d0182253024
+  254  Author: Arun Janarthanan <arunjv@gmail.com>
+  255  Date:   Tue Aug 15 18:33:17 2023 +0530
+  256  INFO@INFOPC MINGW64 /e/TEST (master)
+  257  $ git status
+  258  On branch master
+  259  nothing to commit, working tree clean
+  260  INFO@INFOPC MINGW64 /e/TEST (master)
+  261  $ ls
+  262  INFO@INFOPC MINGW64 /e/TEST (master)
+  263  $ vi test
+  264  INFO@INFOPC MINGW64 /e/TEST (master)
+  265  $ cat test
+  266  this is a new file.
+  267  it has 2 lines.
+  268  Adding 3rd line
+  269  INFO@INFOPC MINGW64 /e/TEST (master)
+  270  $ ls
+  271  test
+  272  INFO@INFOPC MINGW64 /e/TEST (master)
+  273  $ vi test2
+  274  INFO@INFOPC MINGW64 /e/TEST (master)
+  275  $ git status
+  276  On branch master
+  277  Untracked files:
+  278    (use "git add <file>..." to include in what will be committed)
+  279          test
+  280          test2
+  281  nothing added to commit but untracked files present (use "git add" to track)
+  282  INFO@INFOPC MINGW64 /e/TEST (master)
+  283  $ git add .
+  284  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+  285  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+  286  INFO@INFOPC MINGW64 /e/TEST (master)
+  287  $ git status
+  288  On branch master
+  289  Changes to be committed:
+  290    (use "git restore --staged <file>..." to unstage)
+  291          new file:   test
+  292          new file:   test2
+  293  INFO@INFOPC MINGW64 /e/TEST (master)
+  294  $ git commit
+  295  [master 1dd20f4] first commit
+  296   2 files changed, 7 insertions(+)
+  297   create mode 100644 test
+  298   create mode 100644 test2
+  299  INFO@INFOPC MINGW64 /e/TEST (master)
+  300  $ git log
+  301  commit 1dd20f4e82362215b16f87dd0f0c528ea692134b (HEAD -> master)
+  302  Author: Arun Janarthanan <arunjv@gmail.com>
+  303  Date:   Tue Aug 15 19:26:16 2023 +0530
+  304      first commit
+  305  commit 74414920cb28e7983575803201998bf111cd5d44
+  306  Author: Arun Janarthanan <arunjv@gmail.com>
+  307  Date:   Tue Aug 15 19:23:06 2023 +0530
+  308      go to hell
+  309  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+  310  Author: Arun Janarthanan <arunjv@gmail.com>
+  311  Date:   Tue Aug 15 18:36:07 2023 +0530
+  312  INFO@INFOPC MINGW64 /e/TEST (master)
+  313  $ ls
+  314  test  test2
+  315  INFO@INFOPC MINGW64 /e/TEST (master)
+  316  $ vi test
+  317  INFO@INFOPC MINGW64 /e/TEST (master)
+  318  $ vi test2
+  319  INFO@INFOPC MINGW64 /e/TEST (master)
+  320  $ ls
+  321  test  test2
+  322  INFO@INFOPC MINGW64 /e/TEST (master)
+  323  $ git add .
+  324  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+  325  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+  326  INFO@INFOPC MINGW64 /e/TEST (master)
+  327  $ git diff --cashed
+  328  error: invalid option: --cashed
+  329  INFO@INFOPC MINGW64 /e/TEST (master)
+  330  $ git diff --cached
+  331  diff --git a/test b/test
+  332  index dcc1fa2..d349b03 100644
+  333  --- a/test
+  334  +++ b/test
+  335  @@ -1,3 +1,5 @@
+  336   this is a new file.
+  337   it has 2 lines.
+  338  -Adding 3rd line
+  339  +Adding 3rd line.
+  340  +Added 4th line.
+  341  +Added 5th line.
+  342  diff --git a/test2 b/test2
+  343  index 9aab7b4..5199747 100644
+  344  --- a/test2
+  345  +++ b/test2
+  346  @@ -2,3 +2,5 @@ this is the second new file.
+  347  INFO@INFOPC MINGW64 /e/TEST (master)
+  348  $ git diff
+  349  INFO@INFOPC MINGW64 /e/TEST (master)
+  350  $ git diff --cached
+  351  diff --git a/test b/test
+  352  index dcc1fa2..d349b03 100644
+  353  --- a/test
+  354  +++ b/test
+  355  @@ -1,3 +1,5 @@
+  356   this is a new file.
+  357   it has 2 lines.
+  358  -Adding 3rd line
+  359  +Adding 3rd line.
+  360  +Added 4th line.
+  361  +Added 5th line.
+  362  diff --git a/test2 b/test2
+  363  index 9aab7b4..5199747 100644
+  364  --- a/test2
+  365  +++ b/test2
+  366  @@ -2,3 +2,5 @@ this is the second new file.
+  367  INFO@INFOPC MINGW64 /e/TEST (master)
+  368  $ git status
+  369  On branch master
+  370  Changes to be committed:
+  371    (use "git restore --staged <file>..." to unstage)
+  372  git status
+  373  git branch
+  374  git branch -d experimental 
+  375  exit
+  376  git init
+  377  ls -a
+  378  git branch -m main
+  379  git branch 
+  380  echo shyam > one.txt
+  381  ls
+  382  git add .
+  383  git status
+  384  git commit -m "first commit"
+  385  ls
+  386  git status
+  387  ls
+  388  cat one.txt 
+  389  echo prasiddha > two.txt
+  390  git status --short
+  391  git status
+  392  git add .
+  393  git status
+  394  git commit -m "second file added"
+  395  git log
+  396  git checkout c92e8300f24c60a606c7de997fbb0bad235e6151
+  397  ls
+  398  checkout main
+  399  git checkout main
+  400  ls
+  401  git log
+  402  git branch
+  403  gitk
+  404  git branch fast
+  405  gitk
+  406  git switch fast
+  407  ls
+  408  echo anu > three.txt
+  409  git status
+  410  git commit -a -m "added anu"
+  411  git add .
+  412  git status
+  413  git commit -m "added anu"
+  414  ls
+  415  git log
+  416  gitk
+  417  git switch main
+  418  ls
+  419  git merge fast
+  420  gitk
+  421  git branch --delete fast
+  422  gitk
+  423  git branch first
+  424  git switch first 
+  425  ls
+  426  git status
+  427  git add four.txt 
+  428  ls
+  429  git status --short
+  430  git branch second
+  431  git switch second
+  432  ls
+  433  gitk
+  434  git switch first 
+  435  git commit -m "added fourth file."
+  436  ls
+  437  echo last > last.txt
+  438  git add .
+  439  git commit -m "added last file"
+  440  git switch second
+  441  ls
+  442  ls
+  443  git switch first 
+  444  ls
+  445  git switch main
+  446  gitk
+  447  git switch first
+  448  git switch second 
+  449  git switch main
+  450  git switch first
+  451  git diff
+  452  git diff --cached
+  453  git log
+  454  git switch second 
+  455  ls
+  456  git merge first 
+  457  ls
+  458  git switch main
+  459  git merge first,second
+  460  git merge first
+  461  git merge second
+  462  git branch --delete first 
+  463  git branch --delete second 
+  464  git branch 
+  465  ls
+  466  pwd
+  467  exit
+  468  git config --global user.email="arunjv001@gmail.com"
+  469  git config --list
+  470  git config --global user.email="arunjv001@gmail.com"
+  471  git config --list
+  472  git config user.email="arunjv001@gmail.com"
+  473  git config --list
+  474  pwd
+  475  git init
+  476  git config --list
+  477  git config user.email="arunjv001@gmail.com"
+  478  ls -a
+  479  cd .git/
+  480  ls
+  481  cat config 
+  482  cd ..
+  483  pwd
+  484  l
+  485  ls
+  486  clear
+  487  echo one>1.txt
+  488  ls
+  489  git add .
+  490  git commit -m "first commit"
+  491  git remote add origin https://github.com/arunjv123/main.git
+  492  git remote -v
+  493  git branch -m main
+  494  git branch
+  495  git push -u origin main
+  496  git push -u origin main
+  497  clear
+  498  git push -u origin main
+  499  git push -u origin main
+  500  exit
+  501  git remote add origin https://github.com/arunjv123/main.git
+  502  git push -u origin main
+  503  git push -u origin main
+  504  git push -u origin main
+  505  clear
+  506  git status
+  507  history > history_17_8_23.txt
