@@ -1,0 +1,500 @@
+    2  diff --git a/test2 b/test2
+    3  index 9aab7b4..5199747 100644
+    4  --- a/test2
+    5  +++ b/test2
+    6  INFO@INFOPC MINGW64 /e/TEST (master)
+    7  $ git init
+    8  Reinitialized existing Git repository in E:/TEST/.git/
+    9  INFO@INFOPC MINGW64 /e/TEST (master)
+   10  $ git add .
+   11  INFO@INFOPC MINGW64 /e/TEST (master)
+   12  $ git add status
+   13  fatal: pathspec 'status' did not match any files
+   14  INFO@INFOPC MINGW64 /e/TEST (master)
+   15  $ git status
+   16  On branch master
+   17  Changes to be committed:
+   18    (use "git restore --staged <file>..." to unstage)
+   19          deleted:    sample.txt
+   20          deleted:    sample.txt.bak
+   21  INFO@INFOPC MINGW64 /e/TEST (master)
+   22  $ git commit
+   23  [master 7441492] go to hell
+   24   2 files changed, 6 deletions(-)
+   25   delete mode 100644 sample.txt
+   26   delete mode 100644 sample.txt.bak
+   27  INFO@INFOPC MINGW64 /e/TEST (master)
+   28  $ git log
+   29  commit 74414920cb28e7983575803201998bf111cd5d44 (HEAD -> master)
+   30  Author: Arun Janarthanan <arunjv@gmail.com>
+   31  Date:   Tue Aug 15 19:23:06 2023 +0530
+   32      go to hell
+   33  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+   34  Author: Arun Janarthanan <arunjv@gmail.com>
+   35  Date:   Tue Aug 15 18:36:07 2023 +0530
+   36      commited in sun
+   37  commit 36773e097ed811aea182cd85d9ec2d0182253024
+   38  Author: Arun Janarthanan <arunjv@gmail.com>
+   39  Date:   Tue Aug 15 18:33:17 2023 +0530
+   40  INFO@INFOPC MINGW64 /e/TEST (master)
+   41  $ git status
+   42  On branch master
+   43  nothing to commit, working tree clean
+   44  INFO@INFOPC MINGW64 /e/TEST (master)
+   45  $ ls
+   46  INFO@INFOPC MINGW64 /e/TEST (master)
+   47  $ vi test
+   48  INFO@INFOPC MINGW64 /e/TEST (master)
+   49  $ cat test
+   50  this is a new file.
+   51  it has 2 lines.
+   52  Adding 3rd line
+   53  INFO@INFOPC MINGW64 /e/TEST (master)
+   54  $ ls
+   55  test
+   56  INFO@INFOPC MINGW64 /e/TEST (master)
+   57  $ vi test2
+   58  INFO@INFOPC MINGW64 /e/TEST (master)
+   59  $ git status
+   60  On branch master
+   61  Untracked files:
+   62    (use "git add <file>..." to include in what will be committed)
+   63          test
+   64          test2
+   65  nothing added to commit but untracked files present (use "git add" to track)
+   66  INFO@INFOPC MINGW64 /e/TEST (master)
+   67  $ git add .
+   68  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+   69  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+   70  INFO@INFOPC MINGW64 /e/TEST (master)
+   71  $ git status
+   72  On branch master
+   73  Changes to be committed:
+   74    (use "git restore --staged <file>..." to unstage)
+   75          new file:   test
+   76          new file:   test2
+   77  INFO@INFOPC MINGW64 /e/TEST (master)
+   78  $ git commit
+   79  [master 1dd20f4] first commit
+   80   2 files changed, 7 insertions(+)
+   81   create mode 100644 test
+   82   create mode 100644 test2
+   83  INFO@INFOPC MINGW64 /e/TEST (master)
+   84  $ git log
+   85  commit 1dd20f4e82362215b16f87dd0f0c528ea692134b (HEAD -> master)
+   86  Author: Arun Janarthanan <arunjv@gmail.com>
+   87  Date:   Tue Aug 15 19:26:16 2023 +0530
+   88      first commit
+   89  commit 74414920cb28e7983575803201998bf111cd5d44
+   90  Author: Arun Janarthanan <arunjv@gmail.com>
+   91  Date:   Tue Aug 15 19:23:06 2023 +0530
+   92      go to hell
+   93  commit bb108b36b45e14a63dbff526d49946f05b749b68 (sun)
+   94  Author: Arun Janarthanan <arunjv@gmail.com>
+   95  Date:   Tue Aug 15 18:36:07 2023 +0530
+   96  INFO@INFOPC MINGW64 /e/TEST (master)
+   97  $ ls
+   98  test  test2
+   99  INFO@INFOPC MINGW64 /e/TEST (master)
+  100  $ vi test
+  101  INFO@INFOPC MINGW64 /e/TEST (master)
+  102  $ vi test2
+  103  INFO@INFOPC MINGW64 /e/TEST (master)
+  104  $ ls
+  105  test  test2
+  106  INFO@INFOPC MINGW64 /e/TEST (master)
+  107  $ git add .
+  108  warning: in the working copy of 'test', LF will be replaced by CRLF the next time Git touches it
+  109  warning: in the working copy of 'test2', LF will be replaced by CRLF the next time Git touches it
+  110  INFO@INFOPC MINGW64 /e/TEST (master)
+  111  $ git diff --cashed
+  112  error: invalid option: --cashed
+  113  INFO@INFOPC MINGW64 /e/TEST (master)
+  114  $ git diff --cached
+  115  diff --git a/test b/test
+  116  index dcc1fa2..d349b03 100644
+  117  --- a/test
+  118  +++ b/test
+  119  @@ -1,3 +1,5 @@
+  120   this is a new file.
+  121   it has 2 lines.
+  122  -Adding 3rd line
+  123  +Adding 3rd line.
+  124  +Added 4th line.
+  125  +Added 5th line.
+  126  diff --git a/test2 b/test2
+  127  index 9aab7b4..5199747 100644
+  128  --- a/test2
+  129  +++ b/test2
+  130  @@ -2,3 +2,5 @@ this is the second new file.
+  131  INFO@INFOPC MINGW64 /e/TEST (master)
+  132  $ git diff
+  133  INFO@INFOPC MINGW64 /e/TEST (master)
+  134  $ git diff --cached
+  135  diff --git a/test b/test
+  136  index dcc1fa2..d349b03 100644
+  137  --- a/test
+  138  +++ b/test
+  139  @@ -1,3 +1,5 @@
+  140   this is a new file.
+  141   it has 2 lines.
+  142  -Adding 3rd line
+  143  +Adding 3rd line.
+  144  +Added 4th line.
+  145  +Added 5th line.
+  146  diff --git a/test2 b/test2
+  147  index 9aab7b4..5199747 100644
+  148  --- a/test2
+  149  +++ b/test2
+  150  @@ -2,3 +2,5 @@ this is the second new file.
+  151  INFO@INFOPC MINGW64 /e/TEST (master)
+  152  $ git status
+  153  On branch master
+  154  Changes to be committed:
+  155    (use "git restore --staged <file>..." to unstage)
+  156  git status
+  157  git branch
+  158  git branch -d experimental 
+  159  exit
+  160  git init
+  161  ls -a
+  162  git branch -m main
+  163  git branch 
+  164  echo shyam > one.txt
+  165  ls
+  166  git add .
+  167  git status
+  168  git commit -m "first commit"
+  169  ls
+  170  git status
+  171  ls
+  172  cat one.txt 
+  173  echo prasiddha > two.txt
+  174  git status --short
+  175  git status
+  176  git add .
+  177  git status
+  178  git commit -m "second file added"
+  179  git log
+  180  git checkout c92e8300f24c60a606c7de997fbb0bad235e6151
+  181  ls
+  182  checkout main
+  183  git checkout main
+  184  ls
+  185  git log
+  186  git branch
+  187  gitk
+  188  git branch fast
+  189  gitk
+  190  git switch fast
+  191  ls
+  192  echo anu > three.txt
+  193  git status
+  194  git commit -a -m "added anu"
+  195  git add .
+  196  git status
+  197  git commit -m "added anu"
+  198  ls
+  199  git log
+  200  gitk
+  201  git switch main
+  202  ls
+  203  git merge fast
+  204  gitk
+  205  git branch --delete fast
+  206  gitk
+  207  git branch first
+  208  git switch first 
+  209  ls
+  210  git status
+  211  git add four.txt 
+  212  ls
+  213  git status --short
+  214  git branch second
+  215  git switch second
+  216  ls
+  217  gitk
+  218  git switch first 
+  219  git commit -m "added fourth file."
+  220  ls
+  221  echo last > last.txt
+  222  git add .
+  223  git commit -m "added last file"
+  224  git switch second
+  225  ls
+  226  ls
+  227  git switch first 
+  228  ls
+  229  git switch main
+  230  gitk
+  231  git switch first
+  232  git switch second 
+  233  git switch main
+  234  git switch first
+  235  git diff
+  236  git diff --cached
+  237  git log
+  238  git switch second 
+  239  ls
+  240  git merge first 
+  241  ls
+  242  git switch main
+  243  git merge first,second
+  244  git merge first
+  245  git merge second
+  246  git branch --delete first 
+  247  git branch --delete second 
+  248  git branch 
+  249  ls
+  250  pwd
+  251  exit
+  252  git config --global user.email="arunjv001@gmail.com"
+  253  git config --list
+  254  git config --global user.email="arunjv001@gmail.com"
+  255  git config --list
+  256  git config user.email="arunjv001@gmail.com"
+  257  git config --list
+  258  pwd
+  259  git init
+  260  git config --list
+  261  git config user.email="arunjv001@gmail.com"
+  262  ls -a
+  263  cd .git/
+  264  ls
+  265  cat config 
+  266  cd ..
+  267  pwd
+  268  l
+  269  ls
+  270  clear
+  271  echo one>1.txt
+  272  ls
+  273  git add .
+  274  git commit -m "first commit"
+  275  git remote add origin https://github.com/arunjv123/main.git
+  276  git remote -v
+  277  git branch -m main
+  278  git branch
+  279  git push -u origin main
+  280  git push -u origin main
+  281  clear
+  282  git push -u origin main
+  283  git push -u origin main
+  284  exit
+  285  git remote add origin https://github.com/arunjv123/main.git
+  286  git push -u origin main
+  287  git push -u origin main
+  288  git push -u origin main
+  289  clear
+  290  git status
+  291  history > history_17_8_23.txt
+  292  git status
+  293  git add .
+  294  git status
+  295  git commit -m "added history of commands"
+  296  git push
+  297  git branch f1
+  298  git branch
+  299  git checkout f1
+  300  ls
+  301  echo second > 2.txt
+  302  git status
+  303  git add .
+  304  git commit -m added second file
+  305  git commit 2.txt -m added "second file"
+  306  git commit 2.txt -m "second file"
+  307  git branch --graph
+  308  ls
+  309  git branch main
+  310  git switch main
+  311  ls
+  312  git switch f1 
+  313  ls
+  314  git checkout main
+  315  ls
+  316  echo three > 3.txt
+  317  ls
+  318  git status
+  319  git add .
+  320  git commit 3.txt -m "adding 3rd file"
+  321  git status
+  322  git switch f1 
+  323  ls
+  324  git checkout main
+  325  git merge f1
+  326  git push
+  327  git branch
+  328  git f1
+  329  git checkout f1
+  330  ls
+  331  git push
+  332  ls
+  333  echo hello > hello.txt
+  334  ls
+  335  git commit -a hello.txt -m "adding hello"
+  336  git commit hello.txt -a -m "adding hello"
+  337  ls
+  338  git add .
+  339  git commit -m "adding hello to f1"
+  340  git checkout main 
+  341  ls
+  342  echo hello world > hello.txt
+  343  echo add .
+  344  git add .
+  345  git commit -m "adding hello in main"
+  346  ls
+  347  git diff
+  348  ls
+  349  git merge f1
+  350  git branch
+  351  git status
+  352  git add hello.txt 
+  353  git status
+  354  git commit -m "commiting hello for the second time"
+  355  git status
+  356  git push
+  357  ls
+  358  cat hello.txt 
+  359  git merge f1
+  360  git checkout f1
+  361  ls
+  362  cat hello.txt 
+  363  echo world_f1 > world.txt
+  364  git commit -a -m "world added in f1"
+  365  git add .
+  366  git commit -a -m "world added in f1"
+  367  git checkout main
+  368  ls
+  369  echo word_main > world.txt
+  370  git add .
+  371  git commit -m "added world in main"
+  372  ls
+  373  git merge f1
+  374  git add world.txt
+  375  git merge f1
+  376  git commit -m "merged"
+  377  git branch
+  378  git push
+  379  git branch
+  380  exit
+  381  ls
+  382  git status
+  383  git status --short
+  384  ls
+  385  clear
+  386  git status --short
+  387  git status
+  388  git branch
+  389  git checkout f1
+  390  git branch -m feature1
+  391  git branch
+  392  ls
+  393  echo f1 > f1.txt
+  394  ls
+  395  cat f1.txt 
+  396  vi f1
+  397  vi f1.txt 
+  398  cat f1.txt 
+  399  git status --short
+  400  git add .
+  401  git commit -m "f1 is commited in feature1"
+  402  git checkout main
+  403  ls
+  404  git branch f1
+  405  git branch f2
+  406  git checkout f2
+  407  ls
+  408  vi f2.txt
+  409  git add .
+  410  git commit -m "f2 is committed in f2 branch"
+  411  ls
+  412  git switch main
+  413  ls
+  414  vi f3.txt
+  415  cat f3.txt 
+  416  vi f3.txt 
+  417  git status --short
+  418  git add .
+  419  git commit f3.txt -m "second commit in f3 file"
+  420  git status
+  421  vi f3.txt 
+  422  git add .
+  423  git commit f3.txt -m "third commit in f3 file"
+  424  git status
+  425  git push origin main
+  426  ls
+  427  git branch 
+  428  git checkout main
+  429  git merge f1
+  430  ls
+  431  git checkout f1
+  432  ls
+  433  git checkout main 
+  434  git checkout feature1 
+  435  ls
+  436  git checkout main 
+  437  git merge feature1 
+  438  ls
+  439  git merge f2
+  440  gitk
+  441  git branch --delete feature1 
+  442  git branch --delete f1 
+  443  git branch --delete f2
+  444  git branch
+  445  gitk
+  446  git log
+  447  clear
+  448  l
+  449  ls
+  450  vi error.txt
+  451  git add .
+  452  git commit error.txt -m "first commit on error"
+  453  git status
+  454  git push
+  455  git status
+  456  ls
+  457  cat error.txt 
+  458  git branch cr
+  459  git checkout cr
+  460  ls
+  461  vi error.txt 
+  462  git status
+  463  git add .
+  464  git commit error.txt -m "new line added in cr"
+  465  git log
+  466  git checkout main 
+  467  cat error.txt 
+  468  vi error.txt 
+  469  git add .
+  470  git commit error.txt -m "new line added in main"
+  471  git status
+  472  vi error.txt 
+  473  git add .
+  474  git commit error.txt -m "another line added in main"
+  475  git status
+  476  git merge cr
+  477  ls -ltrh
+  478  git add error.txt
+  479  git commit error.txt -m "comitted after merge"
+  480  git merge cr
+  481  git status
+  482  git status
+  483  git commit -m "manual merge"
+  484  git merge cr
+  485  git log
+  486  ls
+  487  cat error.txt 
+  488  git push
+  489  git pull
+  490  clear
+  491  git pull
+  492  ls
+  493  cat README.md 
+  494  git clone 
+  495  clear
+  496  git switch cr2
+  497  git branch cr2
+  498  git switch cr2
+  499  ls
+  500  exit
+  501  history > history_18_8_23.txt 
